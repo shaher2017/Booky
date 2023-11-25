@@ -32,6 +32,9 @@
     "urljoin": "^0.1.5",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "fsevents": "^2.3.3"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
