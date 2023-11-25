@@ -28,7 +28,7 @@ const Sellercard = (props) => {
           width: "100%",
           height: "40vh",
         }}
-        src={process.env.REACT_APP_BASE_URL + "/" + seller.image}
+        src={process.env.REACT_APP_IMAGE_URL + seller.image}
         className="card-img-top img-fluid"
         alt="..."
       />

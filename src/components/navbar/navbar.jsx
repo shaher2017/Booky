@@ -52,7 +52,7 @@ const NavbarBooky = () => {
         },
         withCredentials: true,
       })
-      .then((response)=>{setNameAndImage(response.data)}).catch((error)=>{console.log(error)});}
+      .then((response)=>{console.log(response.data);setNameAndImage(response.data)}).catch((error)=>{console.log(error)});}
     },[])
 
     const handleOpenNavMenu = (event) => {
@@ -261,7 +261,8 @@ const NavbarBooky = () => {
 <Tooltip title="Open settings">
 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
   <Avatar alt="USER" 
-  src={name_and_image.image && `${process.env.REACT_APP_BASE_URL}/${name_and_image.image}`} />
+  src={name_and_image.image && `${process.env.REACT_APP_IMAGE_URL}${name_and_image.image}`} />
+  {console.log( `${process.env.REACT_APP_IMAGE_URL}${name_and_image.image}`)}
 </IconButton>
 </Tooltip>
 <Menu

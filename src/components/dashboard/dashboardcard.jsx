@@ -82,7 +82,7 @@ export default function DashboardCard(props) {
          <CardMedia
         component="img"
         height="250"
-        image={process.env.REACT_APP_BASE_URL + "/" + book.image}
+        image={process.env.REACT_APP_IMAGE_URL + book.image}
         alt=""
       />
         <CardHeader

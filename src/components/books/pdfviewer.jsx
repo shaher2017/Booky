@@ -17,7 +17,7 @@ const PdfViewer = () => {
       })
       .then((response) => {
         setTimeout(() => {
-            window.open(`${process.env.REACT_APP_BASE_URL}/${response.data.bookpdf}`, '_blank');
+            window.open(`${process.env.REACT_APP_IMAGE_URL}${response.data.bookpdf}`, '_blank');
         }, 2000);
            
       })

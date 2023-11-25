@@ -112,7 +112,7 @@ export default function Bookcard(props) {
          <CardMedia
         component="img"
         height="300"
-        image={process.env.REACT_APP_BASE_URL + "/" + book.image}
+        image={process.env.REACT_APP_IMAGE_URL + book.image}
         alt=""
         style={{objectFit:"contain"}}
       />

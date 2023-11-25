@@ -40,7 +40,7 @@ const Profile = () => {
       <Paper elevation={3} style={{ padding: '20px', width:"90%", marginTop:"2rem" }} >
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <img alt={seller.name} src={process.env.REACT_APP_BASE_URL + "/" + seller.image}
+            <img alt={seller.name} src={process.env.REACT_APP_IMAGE_URL + seller.image}
              style={{ width: '100%', height: '20rem', objectFit:"contain" }} />
           </Grid>
 
