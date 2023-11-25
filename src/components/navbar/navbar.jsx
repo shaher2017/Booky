@@ -158,7 +158,7 @@ const NavbarBooky = () => {
         >
           Sellers
         </MenuItem>
-        {localStorage.getItem('booky-access-token') && <MenuItem
+        {localStorage.getItem('booky-access-token') && localStorage.getItem('booky-role') !== "seller" &&<MenuItem
         onClick={()=>{
           navigate("/userbooks")}}
         >
@@ -227,7 +227,7 @@ const NavbarBooky = () => {
         >
           Sellers
         </Button>
-        {localStorage.getItem('booky-access-token') && <Button
+        {localStorage.getItem('booky-access-token') && localStorage.getItem('booky-role') !== "seller" &&<Button
           sx={{ my: 2, color: 'white', display: 'block' }}
           onClick={()=>{navigate("/userbooks")}}
         >
