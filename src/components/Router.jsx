@@ -1,19 +1,22 @@
-import React from 'react';
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import NavbarBooky from "./navbar/navbar";
-import Login from "./login/login";
-import Register from "./register/register";
-import Profile from "./seller/profile";
-import BooksRouter from "./books/booksRouter";
-import PdfViewer from './books/pdfviewer';
-import Notfound from './notfound';
 import Footer from './footer/footer';
-import Sellers from './seller/sellers';
-import Userbooks from './books/userbooks';
+import Loading from "../lazy";
+const Login =  lazy(() => import("./login/login"));
+const Register =  lazy(() => import("./register/register"));
+const Profile =  lazy(() => import("./seller/profile"));
+const BooksRouter =  lazy(() => import("./books/booksRouter"));
+const PdfViewer =  lazy(() => import('./books/pdfviewer'));
+const Notfound =  lazy(() => import('./notfound'));
+const Sellers =  lazy(() => import('./seller/sellers'));
+const Userbooks =  lazy(() => import('./books/userbooks'));
+
 const Router = () => {
   return (
     <div>
          <NavbarBooky />
+         <Suspense fallback={<Loading/>}>
         <Routes>
               <Route path="/" element={<BooksRouter/>} />
               <Route path='/register' element={<Register/>} />
@@ -24,6 +27,7 @@ const Router = () => {
               <Route path='/checkbook/:id' element={<PdfViewer/>} />
               <Route path='/*' element={<Notfound/>} />
         </Routes>
+        </Suspense>
         <Footer/>
     </div>
   )
